@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport"
+        content="width=device-width, initial-scale=1.0,user-scalable=yes">
+  <title>Pitagraswitch Web Debug Sample</title>
+</head>
+<script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.2.1.min.js"></script>
+<script >
+
+ $(document).ready(() => {
+     $('#StartButton').on('click', start);
+ });
+
+ var start = function() {
+     $.ajax({
+         url: "/api/v1/start",
+         success: (data) => {
+             console.log(data);
+         }, error: (req, err, ex) => {
+             console.log(err);
+         }
+     });
+ }
+
+</script>
+<body style="padding: 20px;">
+    <button id="StartButton"  value="start">start</button>
+</body>
+</html>
