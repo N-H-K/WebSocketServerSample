@@ -49,5 +49,8 @@ application = tornado.web.Application([
 ])
 
 if __name__ == "__main__":
+    print "listen web ui:    http://localhost:8080/"
+    print "listen websocket: http://localhost:8080/websocket"
+    print "listen we bapi:   http://localhost:8080/api/v1/[command]"
     application.listen(8080)
     tornado.ioloop.IOLoop.current().start()
