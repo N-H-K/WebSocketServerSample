@@ -10,12 +10,14 @@
 <script >
 
  $(document).ready(() => {
-     $('#StartButton').on('click', start);
+     $('#SendButton').on('click', send);
  });
 
- var start = function() {
+ var send = function() {
+    var message = $('#CommandInput').val();
+
      $.ajax({
-         url: "/api/v1/start",
+         url: "/api/v1/" + message,
          success: (data) => {
              console.log(data);
          }, error: (req, err, ex) => {
@@ -26,6 +28,6 @@
 
 </script>
 <body style="padding: 20px;">
-    <button id="StartButton"  value="start">start</button>
+    <input type="text" size="80" id="CommandInput"><button id="SendButton"  value="start">送信</button>
 </body>
 </html>
